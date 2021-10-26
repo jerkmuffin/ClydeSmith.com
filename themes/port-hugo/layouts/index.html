@@ -1,5 +1,5 @@
 {{ define "main" }} {{- partial "menu.html" . -}} {{- partial "header.html" .
--}}
+-}} 
 
 <!-- =============================
        Start About Me
@@ -115,8 +115,8 @@
       </div>
       <ul id="og-grid" class="og-grid">
         {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
-        $big_image := $image.Fill "1560x1000 jpg" }} {{ $sm_image := $image.Fill
-        "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
+        $big_image := $image.Resize "x1000" }} {{ $sm_image := $image.Resize
+        "x250" }} {{ $parsed_name := replace .name "." "" }}
         <li>
           <!-- <p id="description-{{ $parsed_name | urlize }}" class="hidden">
             {{ .description | markdownify }}
@@ -182,4 +182,27 @@
         </div>
         {{ end }} {{ end }}
 
+<!-- =============================
+       Start submissions
+    =============================== -->
+    <section class="about-me" id="submit">
+      <div class="container">
+        {{ if .Site.Data.content.submit.enable }} {{ with .Site.Data.content.submit }}
+        <div class="row about-me-holder">
+          <div
+            class="
+              col-lg-6 col-md-6 col-sm-6
+              about-me-text
+              d-flex
+              align-self-center
+            "
+          >
+            <div class="text-holder">
+              <h1>{{ .title | safeHTML }}</h1>
+              {{- partial "formkeep.html" -}}
+            </div>
+          </div>
+        </div>
+        {{ end }} {{ end }}
+  
 {{- partial "footer.html" . -}} {{ end }}
