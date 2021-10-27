@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "http://clydeSmith.com"
+baseURL = "http://ClydeESmith.com"
 title = "Clyde E Smith"
 theme = "port-hugo"
 
@@ -40,12 +40,12 @@ link = "plugins/hugrid/hugrid.min.js"
 
 [[menu.main]]
 name = "About Clyde E. Smith"
-URL = "#about"
+URL = "/#about"
 weight = 2
 
 [[menu.main]]
 name = "Photos"
-URL = "#portfolio"
+URL = "/#portfolio"
 weight = 3
 
 [[menu.main]]
@@ -61,13 +61,13 @@ weight = 5
 
 #################### default parameters ################################
 [params]
-logo_light = "images/logo.svg"
-logo_dark = "images/logo-dark.svg"
+logo_light = "images/cs.svg"
+logo_dark = "images/cs-dark.svg"
 copyright = "Lyvers &copy;"
 # Meta data
 description = "Personal Portfolio"
 author = "Lyvers"
-favicon = "images/favicon.png"
+favicon = "images/favicon.ico"
 google_analytics = ""
 
 

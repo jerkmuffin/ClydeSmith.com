@@ -146,7 +146,7 @@
 <!-- =============================
        Start Memories
     =============================== -->
-    <section class="about-me" id="memories">
+    <section class="memories" id="memories">
       <div class="container">
         {{ if .Site.Data.content.memories.enable }} {{ with .Site.Data.content.memories }}
         <div class="row about-me-holder">
@@ -199,10 +199,12 @@
           >
             <div class="text-holder">
               <h1>{{ .title | safeHTML }}</h1>
-              {{- partial "formkeep.html" -}}
+              <div>
+              
+              </div>
             </div>
           </div>
         </div>
         {{ end }} {{ end }}
-  
+{{- partial "formkeep.html" -}}
 {{- partial "footer.html" . -}} {{ end }}

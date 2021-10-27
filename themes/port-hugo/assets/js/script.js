@@ -142,9 +142,9 @@
       path.endsWith('/') && path.length > 1
         ? path.substr(0, path.length - 1)
         : path;
-    if (locationNoTrailing === linkNoAnchor) {
-      this.classList.add('active');
-    }
+    // if (locationNoTrailing === linkNoAnchor) {
+      // this.classList.add('active');
+    // }
   });
 
   function toggleLogoImg(id) {
@@ -177,7 +177,50 @@
       // make header turn white just before it reaches about me section
       offset: $('.menu-container').innerHeight() + 25
     });
-  } else {
+  } else if (window.location.pathname === '/') {
+    $('.portfolio').waypoint({
+      handler: function (direction) {
+        // Changing Menu background after leaving Header Section
+        $('.menu-container').toggleClass('menu-normal');
+        $('.menu-item').toggleClass('menu-item-transparent');
+        $('.desktop-menu .hvr-underline-from-left').toggleClass('dark');
+        // Toggle Logo
+        toggleLogoImg('desktop-logo');
+        // Toggling Mobile Menu Visibility
+        $('.mobile-menu').toggleClass('mobile-menu-fix');
+        // Auto-Collapsing Mobile Menu When Left Open
+        var a = $('.menu-link').attr('class');
+        if (direction == 'up' && a == 'menu-link active') {
+          $('.menu-link').trigger('click');
+        }
+      },
+      // make header turn white just before it reaches about me section
+      offset: $('.menu-container').innerHeight() + 25
+    });
+  } else if (window.location.pathname === '/') {
+    $('.memories').waypoint({
+      handler: function (direction) {
+        // Changing Menu background after leaving Header Section
+        $('.menu-container').toggleClass('menu-normal');
+        $('.menu-item').toggleClass('menu-item-transparent');
+        $('.desktop-menu .hvr-underline-from-left').toggleClass('dark');
+        // Toggle Logo
+        toggleLogoImg('desktop-logo');
+        // Toggling Mobile Menu Visibility
+        $('.mobile-menu').toggleClass('mobile-menu-fix');
+        // Auto-Collapsing Mobile Menu When Left Open
+        var a = $('.menu-link').attr('class');
+        if (direction == 'up' && a == 'menu-link active') {
+          $('.menu-link').trigger('click');
+        }
+      },
+      // make header turn white just before it reaches about me section
+      offset: $('.menu-container').innerHeight() + 25
+    });
+  }
+
+  
+  else {
     // Changing Menu background after leaving Header Section
     $('.menu-container').addClass('menu-normal');
     $('.menu-item').addClass('menu-item-transparent');
