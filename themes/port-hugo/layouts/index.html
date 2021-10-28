@@ -89,19 +89,6 @@
       End About Me
     =============================== -->
 
-{{ if .Site.Data.content.funfacts.enable }} {{ with .Site.Data.content.funfacts
-}}
-<div class="fun-facts container pt-5">
-  {{ range .funfacts_list }}
-  <div class="fun-fact-holder">
-    <img class="img-fluid" src="{{ .image | relURL }}" alt="{{ .name }}" />
-    <p class="fact-counter count" data-count="{{ .count }}">0</p>
-    <p>{{ .name }}</p>
-  </div>
-  {{ end }}
-</div>
-{{ end }} {{ end }}
-
 <!-- =============================
        Start Portfolio
     =============================== -->
@@ -113,28 +100,52 @@
       <div class="col-12 text-center">
         <h2>{{ .title }}</h2>
       </div>
-      <ul id="og-grid" class="og-grid">
-        {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
-        $big_image := $image.Resize "x1000" }} {{ $sm_image := $image.Resize
-        "x250" }} {{ $parsed_name := replace .name "." "" }}
-        <li>
-          <!-- <p id="description-{{ $parsed_name | urlize }}" class="hidden">
-            {{ .description | markdownify }}
-          </p> -->
-          <a
-            href="{{ .url }}"
-            data-largesrc="{{ $big_image.RelPermalink }}"
-            data-title="{{ .name }}"
-            data-buttontext="SEE SITE"
-          >
-            <img
-              src="{{ $sm_image.RelPermalink }}"
-              alt="{{ $parsed_name }} image"
-            />
-          </a>
-        </li>
-        {{ end }}
-      </ul>
+
+      <div class="col-12 d-md-none">
+        <ul id="og-grid" class="og-grid">
+          {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
+          $big_image := $image.Resize "x1000" }} {{ $sm_image := $image.Resize
+          "x250" }} {{ $parsed_name := replace .name "." "" }}
+          <li>
+
+              <img
+                src="{{ $sm_image.RelPermalink }}"
+                alt="{{ $parsed_name }} image"
+              />
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="col 12 d-none d-md-block">
+        <ul id="og-grid" class="og-grid">
+          {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
+          $big_image := $image.Resize "x1000" }} {{ $sm_image := $image.Resize
+          "x250" }} {{ $parsed_name := replace .name "." "" }}
+          <li>
+            <!-- <p id="description-{{ $parsed_name | urlize }}" class="hidden">
+              {{ .description | markdownify }}
+            </p> -->
+            <a
+              href="{{ .url }}"
+              data-largesrc="{{ $big_image.RelPermalink }}"
+              data-title="{{ .name }}"
+              data-buttontext="SEE SITE"
+            >
+              <img
+                src="{{ $sm_image.RelPermalink }}"
+                alt="{{ $parsed_name }} image"
+              />
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      
+
+
+
     </div>
   </div>
 </section>
@@ -197,14 +208,17 @@
               align-self-center
             "
           >
-            <div class="text-holder">
+            <div class="text-holder about-me-text">
               <h1>{{ .title | safeHTML }}</h1>
-              <div>
-              
-              </div>
+              <h3>{{ .subtitle2| safeHTML }}</h3>
+              <p>To submit photos to this site, please visit this <a href="https://www.dropbox.com/request/ADXnPAfd8PhMWF135Zxy">Dropbox</a> portal.</p>
+              <h3>{{ .subtitle1 | safeHTML }}</h3>
             </div>
           </div>
         </div>
+        <div class="col-12">
+          {{- partial "formkeep.html" -}}
+        </div>
         {{ end }} {{ end }}
-{{- partial "formkeep.html" -}}
+
 {{- partial "footer.html" . -}} {{ end }}

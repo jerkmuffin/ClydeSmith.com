@@ -50,12 +50,12 @@ weight = 3
 
 [[menu.main]]
 name = "Memories"
-URL = "#memories"
+URL = "/#memories"
 weight = 4
 
 [[menu.main]]
 name = "Submissions"
-URL = "#submit"
+URL = "/#submit"
 weight = 5
 
 
