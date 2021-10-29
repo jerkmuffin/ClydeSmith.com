@@ -27,6 +27,7 @@ about:
 
 
 ############################# portfolio ################################
+### this images dir is in assests
 portfolio:
   enable: true
   title: 'Photos'
