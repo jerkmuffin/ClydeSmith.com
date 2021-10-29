@@ -40,6 +40,14 @@ portfolio:
       image: 'images/portfolio/family.jpg'
       description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
 
+    - image: 'images/portfolio/GrampiBaby.jpeg'
+    - image: 'images/portfolio/GrampieFam.jpeg'
+    - image: 'images/portfolio/GrampieMarguery.jpeg'
+    - image: 'images/portfolio/GrampieStoic.jpeg'
+    - image: 'images/portfolio/GrampiJeep.jpeg'
+    - image: 'images/portfolio/GrampiMarah.jpeg'
+    - image: 'images/portfolio/GrampiShirt.jpeg'
+    - image: 'images/portfolio/GrampiSmiles.jpeg'
 
 
 ############################# Mamories ################################
