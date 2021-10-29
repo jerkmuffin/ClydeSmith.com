@@ -11,7 +11,7 @@ hero:
   # hero background image
   bg_image: 'images/background.jpg'
   # optional mobile breakpoint background
-  mobile_bg_image: 'images/gus_small.jpg'
+  mobile_bg_image: 'images/background_mobo.jpg'
 
 ########################### About Clyde E. Smith ##################################
 about:
@@ -48,6 +48,8 @@ portfolio:
     - image: 'images/portfolio/GrampiMarah.jpeg'
     - image: 'images/portfolio/GrampiShirt.jpeg'
     - image: 'images/portfolio/GrampiSmiles.jpeg'
+    - image: 'images/portfolio/PotatoFam.jpg'
+    
 
 
 ############################# Mamories ################################
